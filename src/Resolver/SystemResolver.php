@@ -137,7 +137,7 @@ class SystemResolver extends AbstractResolver
      *
      * @throws UnsupportedTypeException|\InvalidArgumentException
      */
-    private function IANA2PHP(int $type): int
+    public function IANA2PHP(int $type): int
     {
         $constantName = 'DNS_'.RecordTypeEnum::getName($type);
         if (!defined($constantName)) {
