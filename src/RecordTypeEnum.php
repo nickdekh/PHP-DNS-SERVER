@@ -57,6 +57,7 @@ class RecordTypeEnum
         self::TYPE_TSIG => 'TSIG',
         self::TYPE_URI => 'URI',
         self::TYPE_DNAME => 'DNAME',
+        self::TYPE_HTTPS => 'HTTPS',
     ];
 
     public const TYPE_A = 1;
@@ -99,6 +100,7 @@ class RecordTypeEnum
     public const TYPE_TSIG = 250;
     public const TYPE_URI = 256;
     public const TYPE_DNAME = 39;
+    public const TYPE_HTTPS = 65;
 
     /**
      * @param int $type

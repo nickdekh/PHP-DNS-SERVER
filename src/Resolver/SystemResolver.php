@@ -63,13 +63,15 @@ class SystemResolver extends AbstractResolver
         $records = dns_get_record($query->getName(), $this->IANA2PHP($query->getType()));
         $result = [];
 
-        foreach ($records as $record) {
-            $result[] = (new ResourceRecord())
-                ->setName($query->getName())
-                ->setClass($query->getClass())
-                ->setTtl($record['ttl'])
-                ->setRdata($this->extractPhpRdata($record))
-                ->setType($query->getType());
+        if (is_iterable($records)) {
+            foreach ($records as $record) {
+                $result[] = (new ResourceRecord())
+                    ->setName($query->getName())
+                    ->setClass($query->getClass())
+                    ->setTtl($record['ttl'])
+                    ->setRdata($this->extractPhpRdata($record))
+                    ->setType($query->getType());
+            }
         }
 
         return $result;

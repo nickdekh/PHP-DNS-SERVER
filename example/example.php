@@ -9,7 +9,8 @@ $jsonResolver = new yswery\DNS\Resolver\JsonResolver([__DIR__.'/record.json', __
 $systemResolver = new yswery\DNS\Resolver\SystemResolver();
 
 // StackableResolver will try each resolver in order and return the first match
-$stackableResolver = new yswery\DNS\Resolver\StackableResolver([$jsonResolver, $systemResolver]);
+//$stackableResolver = new yswery\DNS\Resolver\StackableResolver([$jsonResolver, $systemResolver]);
+$stackableResolver = new yswery\DNS\Resolver\StackableResolver([$jsonResolver]);
 
 // Create the eventDispatcher and add the event subscribers
 $eventDispatcher = new \Symfony\Component\EventDispatcher\EventDispatcher();
