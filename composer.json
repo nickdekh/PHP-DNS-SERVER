@@ -1,5 +1,5 @@
 {
-    "name": "yswery/dns",
+    "name": "nickdekh/php-dns-server",
     "description": "A DNS server implementation in pure PHP.",
     "require-dev": {
         "phpunit/phpunit": ">=7.3",
